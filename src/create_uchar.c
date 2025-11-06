@@ -2,12 +2,12 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "unicode_handling.h"
+#include "cstl_unic.h"
 
 
 static res_uchar initialize_unicode() {
 	
-	return (res_uchar){SAFE_ENCODING,(unichar){0, 0}};
+	return (res_uchar){SAFE_ENCODING,(unichar){{0}, 0}};
 }
 
 static res_uchar encode_unicode(uint32_t value) {
@@ -26,7 +26,6 @@ static res_uchar encode_unicode(uint32_t value) {
 
 		} else if(value <= 0x7FF) {
 
-			uint8_t utf_char[3];
 			response.data.chr[0] = 0xC0 | (value >> 6) ;
 			response.data.chr[1] = 0x80 | (value & 0x3F);
 

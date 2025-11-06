@@ -28,6 +28,7 @@ set_target_properties(unicode_handler PROPERTIES
     C_STANDARD 99
     C_STANDARD_REQUIRED YES
     C_EXTENSIONS NO
+    OUTPUT_NAME "cstl_unic"
 )
 
 set_target_properties(unic PROPERTIES
@@ -46,8 +47,8 @@ if(WIN32 AND BUILD_SHARED_LIBS)
 endif()
 
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
-    target_compile_options(unicode_handler PRIVATE -Wall -Wextra -Wpedantic)
-    target_compile_options(unic PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(unicode_handler PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    target_compile_options(unic PRIVATE -Wall -Wextra -Wpedantic -Werror)
 elseif(MSVC)
     target_compile_options(unicode_handler PRIVATE /W4)
     target_compile_options(unic PRIVATE /W4)
