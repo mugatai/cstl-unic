@@ -1,11 +1,11 @@
 
 ![Banner Text](readmeart.png)
 
-## A unicode handing library written in C99
+## A unicode hanlding library written in C99
 
 ### Seamlessly read/write/encode/decode unicode characters
 
-### Usage instructions
+### Usage instructions ::
 
 ---
 
@@ -25,9 +25,10 @@
         GIT_TAG        v0.1.0
         GIT_SHALLOW    TRUE
         GIT_PROGRESS   TRUE  # Shows download progress
+        SOURCE_DIR ${CMAKE_CURENT_BINARY_DIR}/cstl_unic
     )
 
-    FetchContent_MakeAvailable(unicode_handler)
+    FetchContent_MakeAvailable(cstl_unic)
 
     # your targets
 
