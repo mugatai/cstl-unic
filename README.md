@@ -20,12 +20,12 @@
     include(FetchContent)
 
     FetchContent_Declare(
-        unicode_handler
+        cstl_unic
         GIT_REPOSITORY https://github.com/mugatai/cstl-unic.git
-        GIT_TAG        v0.1.0
+        GIT_TAG        v0.1.1
         GIT_SHALLOW    TRUE
         GIT_PROGRESS   TRUE  # Shows download progress
-        SOURCE_DIR ${CMAKE_CURENT_BINARY_DIR}/cstl_unic
+        SOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR}/cstl_unic
     )
 
     FetchContent_MakeAvailable(cstl_unic)

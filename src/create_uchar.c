@@ -11,6 +11,9 @@ static res_uchar initialize_unicode() {
 }
 
 static res_uchar encode_unicode(uint32_t value) {
+	
+	
+	res_uchar response = initialize_unicode();
 
 	if (value > 0x10FFFF) {
 		response.err = INVALID_UNICODE_VALUE;
@@ -48,9 +51,7 @@ static res_uchar encode_unicode(uint32_t value) {
 
 res_uchar create_unicode(uint32_t hex) {
 	
-	res_uchar response;
-
-	response = initialize_unicode();
+	res_uchar response = initialize_unicode();
 
 	if (sizeof(hex) > 4) {
 		response.err = INVALID_UNICODE_VALUE;
